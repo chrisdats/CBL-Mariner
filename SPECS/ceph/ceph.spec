@@ -53,6 +53,10 @@ Source0:        https://download.ceph.com/tarballs/%{name}-%{version}.tar.gz
 %define python3_sitearch %(python3 -c "from distutils.sysconfig import get_python_lib; import sys; sys.stdout.write(get_python_lib(1))")
 
 
+# enable dwz to compresses the debuginfo
+%global _find_debuginfo_dwz_opts --run-dwz
+
+
 #################################################################################
 # Main package dependencies
 #################################################################################
@@ -1779,7 +1783,7 @@ exit 0
 
 %changelog
 * Mon May 17 2021 Thomas Crain <thcrain@microsoft.com> - 15.2.4-3
-- Add back in the debuginfo package
+- Add back in the debuginfo package and enable dwz compression
 
 * Fri Feb 05 2021 Joe Schmitt <joschmit@microsoft.com> - 15.2.4-2
 - Include python bytecompiled files in the resulting package.

@@ -301,18 +301,17 @@ build_rpm_in_chroot_no_install zip
 chroot_and_install_rpms zip
 build_rpm_in_chroot_no_install unzip
 chroot_and_install_rpms unzip
-build_rpm_in_chroot_no_install alsa-lib
-chroot_and_install_rpms alsa-lib
 build_rpm_in_chroot_no_install gperf
 chroot_and_install_rpms gperf
 
-# Python2 needs to be installed for RPM and openjdk's dependencies to build
-
-# Python3 needs to be installed for RPM to build
+# Python3 needs to be installed for RPM, alsa-lib to build
 build_rpm_in_chroot_no_install python3
 rm -vf $FINISHED_RPM_DIR/python3*debuginfo*.rpm
 chroot_and_install_rpms python3
 
+# openjdk needs alsa-lib to build
+build_rpm_in_chroot_no_install alsa-lib
+chroot_and_install_rpms alsa-lib
 
 # openjdk needs fontconfig to build, which needs libxml
 build_rpm_in_chroot_no_install libxml2
@@ -322,7 +321,6 @@ chroot_and_install_rpms expat
 chroot_and_install_rpms freetype
 build_rpm_in_chroot_no_install fontconfig
 chroot_and_install_rpms fontconfig
-
 
 # Build OpenJDK and OpenJRE
 echo Java bootstrap version:
@@ -346,7 +344,6 @@ chroot_and_install_rpms openjre8
 # Lua needs to be installed for RPM to build
 build_rpm_in_chroot_no_install lua
 chroot_and_install_rpms lua
-
 build_rpm_in_chroot_no_install rpm
 
 # Build tdnf-2.1.0

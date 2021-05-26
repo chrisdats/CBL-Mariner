@@ -162,6 +162,16 @@ Patch1132:      CVE-2021-23133.nopatch
 Patch1133:      CVE-2021-29154.nopatch
 # CVE-2021-30178 - Introducing commit not in stable tree. No fix necessary at this time.
 Patch1134:      CVE-2021-30178.nopatch
+Patch1135:      CVE-2021-23134.nopatch
+Patch1136:      CVE-2021-29155.nopatch
+Patch1137:      CVE-2021-31829.nopatch
+Patch1138:      CVE-2021-31916.nopatch
+Patch1139:      CVE-2021-32399.nopatch
+Patch1140:      CVE-2021-33033.nopatch
+Patch1141:      CVE-2021-33034.nopatch
+Patch1142:      CVE-2021-3483.nopatch
+Patch1143:      CVE-2021-3501.nopatch
+Patch1144:      CVE-2021-3506.nopatch
 BuildRequires:  audit-devel
 BuildRequires:  bash
 BuildRequires:  bc
@@ -491,6 +501,9 @@ ln -sf linux-%{uname_r}.cfg /boot/mariner.cfg
 %changelog
 * Wed May 26 2021 Rachel Menge <rachelmenge@microsoft.com> - 5.10.37.1-1
 - Update source to 5.10.37.1
+- Address CVE-2021-23134, CVE-2021-29155, CVE-2021-31829, CVE-2021-31916, 
+  CVE-2021-32399, CVE-2021-33033, CVE-2021-33034, CVE-2021-3483
+  CVE-2021-3501, CVE-2021-3506
 
 * Thu May 20 2021 Nicolas Ontiveros <niontive@microsoft.com> - 5.10.32.1-4
 - Bump release number to match kernel-signed update
